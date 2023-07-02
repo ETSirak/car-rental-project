@@ -9,5 +9,29 @@
     "hasDrivingLicense":true,
     "registrationDateTime":"2023-07-02T11:37:48.781814",
     "dateOfBirth":"1991-04-27"
+  },
+
+  {
+    "id":2,
+    "name":"Tonis",
+    "surname":"Sirak",
+    "phone":"321321",
+    "email":"et@et.et",
+    "address":"Estonia",
+    "hasDrivingLicense":true,
+    "registrationDateTime":"2023-07-02T11:37:48.781814",
+    "dateOfBirth":"1991-04-27"
+  },
+
+  {
+    "id":3,
+    "name":"Sirak",
+    "surname":"Erki",
+    "phone":"213321",
+    "email":"et@et.et",
+    "address":"Estonia",
+    "hasDrivingLicense":true,
+    "registrationDateTime":"2023-07-02T11:37:48.781814",
+    "dateOfBirth":"1991-04-27"
   }
 ]
