@@ -1,0 +1,13 @@
+[
+  {
+    "id":1,
+    "name":"Erki",
+    "surname":"Sirak",
+    "phone":"123123",
+    "email":"et@et.et",
+    "address":"Estonia",
+    "hasDrivingLicense":true,
+    "registrationDateTime":"2023-07-02T11:37:48.781814",
+    "dateOfBirth":"1991-04-27"
+  }
+]
