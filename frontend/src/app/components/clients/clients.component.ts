@@ -36,6 +36,26 @@ export class ClientsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.clients);
     console.log('inside clients component constructor')
   }
+
+  get name() {
+    return this.clientForm.controls.name;
+  }
+  get surname() {
+    return this.clientForm.controls.surname;
+  }
+  get phone() {
+    return this.clientForm.controls.phone;
+  }
+  get email() {
+    return this.clientForm.controls.email;
+  }
+  get hasDrivingLicence() {
+    return this.clientForm.controls.hasDrivingLicence;
+  }
+  get dateOfBirth() {
+    return this.clientForm.controls.dateOfBirth;
+  }
+
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

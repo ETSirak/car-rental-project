@@ -63,26 +63,49 @@
 <div>
   <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
     <label for="name">Name:</label>
-    <input [formControl]="clientForm.controls.name" type="text" id="name">
+    <input [formControl]="name" type="text" id="name">
+    <div *ngIf="name.invalid">
+      <div *ngIf="name.errors?.['required']">Name field required.</div>
+      <div *ngIf="name.errors?.['minlength']">Minimum length is 2.</div>
+    </div>
 
     <label for="surname">Surname:</label>
     <input [formControl]="clientForm.controls.surname" type="text" id="surname">
+    <div *ngIf="surname.invalid">
+      <div *ngIf="surname.errors?.['required']">Surname field required.</div>
+      <div *ngIf="surname.errors?.['minlength']">Minimum length is 2.</div>
+    </div>
 
     <label for="phone">Phone:</label>
     <input [formControl]="clientForm.controls.phone" type="text" id="phone">
+    <div *ngIf="phone.invalid">
+      <div *ngIf="phone.errors?.['required']">Phone number required.</div>
+      <div *ngIf="phone.errors?.['minlength']">Minimum length is 7.</div>
+    </div>
 
     <label for="email">E-Mail:</label>
     <!--<input formControlName="email" type="text" id="email">-->
     <input [formControl]="clientForm.controls.email" type="text" id="email">
+    <div *ngIf="email.invalid">
+      <div *ngIf="email.errors?.['required']">E-Mail required.</div>
+      <div *ngIf="email.errors?.['email']">Please enter valid e-mail address.</div>
+    </div>
 
     <label for="address">Address:</label>
     <input [formControl]="clientForm.controls.address" type="text" id="address">
 
     <label for="hasDrivingLicence">Drivers licence:</label>
     <input [formControl]="clientForm.controls.hasDrivingLicence" type="text" id="hasDrivingLicence">
+    <div *ngIf="hasDrivingLicence.invalid">
+      <div *ngIf="hasDrivingLicence.errors?.['required']">Drivers licence info required.</div>
+    </div>
 
     <label for="dateOfBirth">Date of Birth:</label>
     <input [formControl]="clientForm.controls.dateOfBirth" type="text" id="dateOfBirth">
+    <div *ngIf="dateOfBirth.invalid">
+      <div *ngIf="dateOfBirth.errors?.['required']">Date info required.</div>
+      <div *ngIf="dateOfBirth.errors?.['minlength']">Please enter valid date of birth (YYYY-MM-DD).</div>
+    </div>
 
     <button [disabled]="!clientForm.valid" type="submit" mat-flat-button color="warn">Submit</button>
   </form>
