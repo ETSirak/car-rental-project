@@ -76,6 +76,8 @@
       <div *ngIf="surname.errors?.['minlength']">Minimum length is 2.</div>
     </div>
 
+    <!--- TODO: Fix to validate only numbers --->
+
     <label for="phone">Phone:</label>
     <input [formControl]="clientForm.controls.phone" type="text" id="phone">
     <div *ngIf="phone.invalid">
@@ -99,6 +101,7 @@
     <div *ngIf="hasDrivingLicence.invalid">
       <div *ngIf="hasDrivingLicence.errors?.['required']">Drivers licence info required.</div>
     </div>
+<!--- TODO: fix validation --->
 
     <label for="dateOfBirth">Date of Birth:</label>
     <input [formControl]="clientForm.controls.dateOfBirth" type="text" id="dateOfBirth">
