@@ -17,6 +17,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {clientPageUrl, homePageUrl, notFoundPageUrl} from "./models/links";
+import {ReactiveFormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import {clientPageUrl, homePageUrl, notFoundPageUrl} from "./models/links";
       {path: notFoundPageUrl, component: NotFoundPageComponent}
     ]),
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

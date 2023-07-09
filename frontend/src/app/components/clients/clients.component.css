@@ -7,6 +7,8 @@ table {
   width: 100%;
 }
 
-td, th {
-  width: 25%;
+label {
+  display: block;
+  margin: .5em 0;
+  font-weight: bold;
 }
