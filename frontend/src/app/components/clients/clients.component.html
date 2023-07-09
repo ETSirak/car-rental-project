@@ -80,9 +80,6 @@
     <label for="hasDrivingLicence">Drivers licence:</label>
     <input formControlName="hasDrivingLicence" type="text" id="hasDrivingLicence">
 
-    <label for="registrationDateTime">Registration time:</label>
-    <input formControlName="registrationDateTime" type="text" id="registrationDateTime">
-
     <label for="dateOfBirth">Date of Birth:</label>
     <input formControlName="dateOfBirth" type="text" id="dateOfBirth">
 
@@ -90,6 +87,11 @@
   </form>
 
 <!---json(clientForm.value--->
+  <br>
   <p>Form value: {{ clientForm.value | json }}</p>
+  <br>
+  <p>Form status: {{ clientForm.status }}</p>
+
+
 
 </div>
