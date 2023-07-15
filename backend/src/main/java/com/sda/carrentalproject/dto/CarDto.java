@@ -16,9 +16,7 @@ public record CarDto(Long id,
         String model,
 
         YearMonth productionYear,
-
-        @Enumerated(EnumType.STRING)
-                Color color,
+        Color color,
 
         boolean available,
 
