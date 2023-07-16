@@ -8,14 +8,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class BookingRecordServiceTest {
-
     @Autowired
     private BookingRecordService service;
     @Test
@@ -29,7 +25,6 @@ class BookingRecordServiceTest {
         long expectedPriceInEuroCents = 2 * 15_000;
         Assertions.assertEquals(expectedPriceInEuroCents, calculatedPriceInEuroCents);
     }
-
     @Test
     void calculateBookingPriceWithNegativePeriod() {
         CarBookingRequestDto bookingRequestForTwoDays =
@@ -37,8 +32,8 @@ class BookingRecordServiceTest {
         Car carToBook = Car.builder()
                 .priceList(new PriceList(15_000L))
                 .build();
-        // TODO: check the message
-        Assertions.assertThrows(PeriodCalculationException.class, () -> service.calculateBookingPrice(bookingRequestForTwoDays, carToBook));
+        PeriodCalculationException exc = Assertions.assertThrows(PeriodCalculationException.class, () -> service.calculateBookingPrice(bookingRequestForTwoDays, carToBook));
+        Assertions.assertEquals("End date is before starting date", exc.getMessage());
     }
     @Test
     void calculateBookingPriceForTooShortPeriod() {
@@ -47,7 +42,8 @@ class BookingRecordServiceTest {
         Car carToBook = Car.builder()
                 .priceList(new PriceList(15_000L))
                 .build();
-        Assertions.assertThrows(PeriodCalculationException.class,
+        PeriodCalculationException exc = Assertions.assertThrows(PeriodCalculationException.class,
                 () -> service.calculateBookingPrice(bookingRequestDtoForZeroDays, carToBook));
+        Assertions.assertEquals("Booking duration is too low", exc.getMessage());
     }
 }
