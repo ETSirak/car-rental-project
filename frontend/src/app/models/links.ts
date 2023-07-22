@@ -9,4 +9,6 @@ export const homePageUrl = ''
 export const clientPageUrl = 'clients'
 
 export const loginPageUrl = 'login'
+
+export const carsPageUrl = 'cars'
 export const notFoundPageUrl = '**'
