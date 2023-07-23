@@ -36,7 +36,7 @@ public class DataInitializer implements CommandLineRunner {
                 .productionYear(YearMonth.of(2000, Month.JANUARY))
                 .color(Color.BLUE)
                 .available(true)
-                .priceList(new PriceList(10_000))
+                .priceList(new PriceList(10_000L))
                 .build();
         Car car2Available = Car.builder()
                 .brand("Ford")
@@ -44,7 +44,7 @@ public class DataInitializer implements CommandLineRunner {
                 .productionYear(YearMonth.of(2010, Month.JANUARY))
                 .color(Color.BLUE)
                 .available(true)
-                .priceList(new PriceList(5_000))
+                .priceList(new PriceList(5_000L))
                 .build();
         Car car3Unavailable = Car.builder()
                 .brand("Mazda")
@@ -52,7 +52,7 @@ public class DataInitializer implements CommandLineRunner {
                 .productionYear(YearMonth.of(2000, Month.JANUARY))
                 .color(Color.PINK)
                 .available(false)
-                .priceList(new PriceList(12_000))
+                .priceList(new PriceList(12_000L))
                 .build();
         carRepository.save(car1Available);
         carRepository.save(car2Available);
