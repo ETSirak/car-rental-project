@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Map;
 
@@ -28,9 +29,11 @@ public class CarController {
     }
 
     @GetMapping("/cars")
-    public List<CarDto> getCars(@RequestParam Map<String, String> queryParams) {
+    public List<CarDto> getCars(@RequestParam Map<String, String> queryParams,
+                                Pageable pageable) {
         log.info("getting cars");
         log.info("query params: {}", queryParams);
+        log.info("paging parameters: [{}]", pageable);
         return carService.findCarsBasedOnQueryParameters(queryParams)
                 .stream()
                 .map(car -> carMapper.fromEntityToDto(car))

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-    Optional<Car> findByIdAndAvailableTrue(long aLong);
+    Optional<Car> findByIdAndAvailableTrue(Long aLong);
 
-    List<Car> findAllByAvailableTrue();
+    List<Car> findAllByAvailable(boolean available);
 }
