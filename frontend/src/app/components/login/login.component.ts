@@ -58,4 +58,5 @@ export class LoginComponent {
     this.isLoggedIn = this.loginService.isLoggedIn;
     this.isLoggedOut = !this.loginService.isLoggedIn;
   }
+
 }
